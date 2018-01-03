@@ -15,7 +15,7 @@
         <LinearLayout
             android:id="@+id/LinearLayout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent">>
 
@@ -38,7 +38,7 @@
         <ListView
             android:id="@+id/activityVerContactosList"
             android:layout_width="match_parent"
-            android:layout_height="392dp"
+            android:layout_height="396dp"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="35dp"></ListView>
 
