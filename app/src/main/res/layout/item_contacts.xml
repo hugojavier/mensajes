@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/asdasd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/asd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/itemContactsImgEdit"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+            <TextView
+                android:id="@+id/itemContactsTxtName"
+                android:layout_width="122dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Contacto" />
+
+            <TextView
+                android:id="@+id/itemContactsTxtNumero"
+                android:layout_width="168dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Número" />
+
+            <ImageView
+                android:id="@+id/itemContactsImgDelete"
+                android:layout_width="43dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_delete" />
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+
+

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MensajesD</string>
+    <string name="app_Eatc">Entra a tu cuenta</string>
+    <string name="app_Usuario">USUARIO</string>
+    <string name="app_Contraseña">CONTRASEÑA</string>
+    <string name="app_entrar">Entrar</string>
+    <string name="app_bienvenido">Bienvenido,</string>
+</resources>
