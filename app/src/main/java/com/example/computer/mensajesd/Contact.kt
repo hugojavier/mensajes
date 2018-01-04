@@ -9,16 +9,16 @@ class Contact : Parcelable {
 
     var id: Int = 0
     var nombre: String = ""
-    var número: String = ""
+    var numero: String = ""
 
     constructor(){
 
     }
 
-    constructor(id: Int, nombre: String, número: String){
+    constructor(id: Int, nombre: String, numero: String){
 
         this.id = id
-        this.número = número
+        this.numero = numero
         this.nombre = nombre
     }
 
@@ -29,16 +29,16 @@ class Contact : Parcelable {
     override fun writeToParcel(dest: Parcel, flags: Int) {
         dest.writeInt(this.id)
         dest.writeString(this.nombre)
-        dest.writeString(this.número)
+        dest.writeString(this.numero)
     }
 
     override fun toString(): String {
-        return "Contact(id=$id, nombre=$nombre, número=$número)"
+        return "Contact(id=$id, nombre=$nombre, número=$numero)"
     }
 
     protected constructor(`in`: Parcel) {
         this.id = `in`.readInt()
-        this.número = `in`.readString()
+        this.numero = `in`.readString()
         this.nombre = `in`.readString()
     }
 

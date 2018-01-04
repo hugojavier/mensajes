@@ -22,8 +22,11 @@ class AddOrEditContacts : AppCompatActivity() {
         }else{
             activityAddEditButton.text = "actualizar"
             var con: Contact = intent.getParcelableExtra(CONTACT_KEY)
-            activityAddEditContactEdtNumber.setText(con.número)
-            activityAddEditContactEdtName.setText(con.nombre)
+
+            activityAddEditContactEdtName.setText(con.numero)
+
+            activityAddEditContactEdtNumber.setText(con.nombre)
+
 
         }
 

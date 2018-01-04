@@ -65,7 +65,7 @@ class DatabaseHelper(context: Context?, name: String?, factory: SQLiteDatabase.C
                 var con : Contact = Contact()
                 con.id= cursor.getInt(0)
                 con.nombre = cursor.getString(1)
-                con.número = cursor.getString(2)
+                con.numero = cursor.getString(2)
                 list.add(con)
             }while (cursor.moveToNext())
         }

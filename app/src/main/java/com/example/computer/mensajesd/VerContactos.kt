@@ -65,7 +65,7 @@ class VerContactos : AppCompatActivity() {
             var imgEdit : ImageView = convertView.findViewById<ImageView>(R.id.itemContactsImgEdit) as ImageView
             var imgDelete : ImageView = convertView.findViewById<ImageView>(R.id.itemContactsImgDelete) as ImageView
             txtNombre.text = list?.get(position)?.nombre
-            txtNumero.text = list?.get(position)?.número
+            txtNumero.text = list?.get(position)?.numero
 
             imgEdit.setOnClickListener {
                 var intent = Intent(context, AddOrEditContacts::class.java)

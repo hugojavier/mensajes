@@ -19,8 +19,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:drawableLeft="@drawable/ic_action_user"
-            android:hint="Nombre"
-            android:inputType="textPersonName" />
+            android:hint="Nombre" />
 
         <EditText
             android:id="@+id/activityAddEditContactEdtNumber"
@@ -28,8 +27,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:drawableLeft="@drawable/ic_action_number"
-            android:hint="Número"
-            android:inputType="textPersonName" />
+            android:hint="Número" />
 
         <Button
             android:id="@+id/activityAddEditButton"
