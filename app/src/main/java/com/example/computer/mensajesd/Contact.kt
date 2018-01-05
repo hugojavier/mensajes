@@ -33,7 +33,7 @@ class Contact : Parcelable {
     }
 
     override fun toString(): String {
-        return "Contact(id=$id, nombre=$nombre, número=$numero)"
+        return "Contact(id=$id, nombre=$nombre, numero=$numero)"
     }
 
     protected constructor(`in`: Parcel) {

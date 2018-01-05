@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.computer.mensajesd.Contact
 import com.example.computer.mensajesd.Const.UPDATE
 import com.example.computer.mensajesd.Const.ADD
 import com.example.computer.mensajesd.Const.CONTACT_KEY
@@ -33,7 +34,7 @@ class VerContactos : AppCompatActivity() {
         activityVerContactosList.adapter = adapter
 
         fab1.setOnClickListener{
-            var intent :Intent = Intent(this@VerContactos, AddOrEditContacts::class.java)
+            var intent : Intent = Intent(this@VerContactos, AddOrEditContacts::class.java)
             intent.putExtra(WHAT, ADD)
             startActivity(intent)
         }
@@ -47,17 +48,26 @@ class VerContactos : AppCompatActivity() {
             this.list = DatabaseHelper.getInstance(context!!).getAllContactos()
             this.context = context
 
+            Log.i("qwerty", "gh")
+
         }
 
         fun updateList(){
             this.list = DatabaseHelper.getInstance(context!!).getAllContactos()
             notifyDataSetChanged()
+            Log.i("asdfgh", "asd")
         }
+
+
 
         override fun getView(position: Int, view: View?, p2: ViewGroup?): View {
             var convertView : View? = view
+
+            Log.i("zxcbb","hugo")
             if(convertView == null){
                 convertView = View.inflate(context,R.layout.item_contacts,null)
+
+
             }
 
             var txtNombre : TextView = convertView?.findViewById<TextView>(R.id.itemContactsTxtName) as TextView
