@@ -23,8 +23,7 @@ public class Login extends AppCompatActivity {
     private Button bTingresar;
     private VolleyRP volley;
     private RequestQueue mRequest;
-    private String USER = "";
-    private String PASSWORD = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +47,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void VerificarLogin(String user, String Password) {
-        USER = user;
-        PASSWORD = Password;
+
         SolicitudJSON(IP + user);
 
 
@@ -74,11 +72,7 @@ public class Login extends AppCompatActivity {
         try {
             String estado = datos.getString("resultado");
             if (estado.equals("CC")) {
-                JSONObject Jsondatos = new JSONObject(datos.getString("datos"));
-                String nombre = Jsondatos.getString("id");
-                String clave = Jsondatos.getString("password");
-                Toast.makeText(this, nombre + clave, Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "El usuario si existe", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, estado, Toast.LENGTH_SHORT).show();
             }

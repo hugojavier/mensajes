@@ -1,5 +1,8 @@
 package com.example.computer.mensajesd.Mensajes;
 
+import android.content.Context;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -18,9 +21,11 @@ import java.util.List;
 
 public class MensajeAdapter extends RecyclerView.Adapter<MensajeAdapter.MensajesViewHolder> {
     private List<MensajeDeTexto> mensajeDeTextos;
+    private Context context;
 
-    public MensajeAdapter(List<MensajeDeTexto> mensajeDeTextos) {
+    public MensajeAdapter(List<MensajeDeTexto> mensajeDeTextos, Context context) {
         this.mensajeDeTextos = mensajeDeTextos;
+        this.context = context;
     }
 
     @Override
@@ -35,23 +40,41 @@ public class MensajeAdapter extends RecyclerView.Adapter<MensajeAdapter.Mensajes
 
         RelativeLayout.LayoutParams rl = (RelativeLayout.LayoutParams) holder.cardView.getLayoutParams();
         FrameLayout.LayoutParams fl = (FrameLayout.LayoutParams) holder.mensajeBG.getLayoutParams();
+        LinearLayout.LayoutParams ll1Mensaje = (LinearLayout.LayoutParams) holder.TvMensaje.getLayoutParams();
+        LinearLayout.LayoutParams llHora = (LinearLayout.LayoutParams) holder.TvHora.getLayoutParams();
+
         if (mensajeDeTextos.get(position).getTipoMensaje() == 1) {
             holder.mensajeBG.setBackgroundResource(R.drawable.in_message_bg);
             rl.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
             rl.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
             fl.gravity = Gravity.RIGHT;
+            ll1Mensaje.gravity = Gravity.RIGHT;
+            llHora.gravity = Gravity.RIGHT;
+            holder.TvMensaje.setGravity(Gravity.RIGHT);
         } else if (mensajeDeTextos.get(position).getTipoMensaje() == 2) {
             holder.mensajeBG.setBackgroundResource(R.drawable.out_message_bg);
             rl.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
             rl.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             fl.gravity = Gravity.LEFT;
+            ll1Mensaje.gravity = Gravity.LEFT;
+            llHora.gravity = Gravity.LEFT;
+            holder.TvMensaje.setGravity(Gravity.LEFT);
+
         }
 
         holder.cardView.setLayoutParams(rl);
+        holder.mensajeBG.setLayoutParams(fl);
+        holder.TvHora.setLayoutParams(llHora);
+        holder.TvMensaje.setLayoutParams(ll1Mensaje);
 
 
         holder.TvMensaje.setText(mensajeDeTextos.get(position).getMensaje());
         holder.TvHora.setText(mensajeDeTextos.get(position).getHoraDelMensaje());
+        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
+            holder.cardView.getBackground().setAlpha(0);
+        else
+            holder.cardView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));
+
     }
 
     @Override
